@@ -1,0 +1,24 @@
+{
+    "name": "comet",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "esbuild ./src/index.mjs --bundle --outfile=dist.mjs --minify --platform=node --format=esm"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@aws-sdk/client-bedrock-runtime": "^3.529.1",
+        "duck-duck-scrape": "^2.2.5",
+        "faiss-node": "^0.5.1",
+        "lowdb": "^7.0.1",
+        "ollama": "^0.4.6",
+        "string-strip-html": "^13.4.6"
+    },
+    "devDependencies": {
+        "esbuild": "^0.18.16"
+    }
+}
