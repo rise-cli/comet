@@ -172,3 +172,34 @@ async function main() {
 
 main()
 ```
+
+### Server
+
+all api routes are POST method only, and are prefixed with `api/`.
+
+```js
+import comet from './comet.mjs'
+
+const server = comet.server()
+
+server.front('front/') // where my html, css, js, png, jpgs are
+
+server.api('/name', async (data) => {
+    return {
+        id: 'hi'
+    }
+})
+
+server.start()
+```
+
+So in the example above, the frontend would call the /name route by doing this:
+
+```js
+fetch('/api/name', {
+    method: 'POST',
+    body: JSON.stringify({
+        some: 'data'
+    })
+})
+```
