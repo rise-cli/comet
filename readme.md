@@ -203,3 +203,12 @@ fetch('/api/name', {
     })
 })
 ```
+
+### Crawl
+
+```js
+import comet from '../../src/index.mjs'
+
+const url = 'https://my-target.org/'
+comet.crawl(url)
+```

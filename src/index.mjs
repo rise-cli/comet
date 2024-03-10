@@ -3,6 +3,7 @@ import llmLocal from './llm-local.mjs'
 import llmAws from './llm-aws.mjs'
 import vector from './vector.mjs'
 import server from './server.mjs'
+import crawl from './crawl.mjs'
 
 export default {
     website,
@@ -11,5 +12,6 @@ export default {
         aws: llmAws
     },
     vector,
-    server
+    server,
+    crawl
 }

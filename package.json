@@ -12,10 +12,12 @@
     "license": "ISC",
     "dependencies": {
         "@aws-sdk/client-bedrock-runtime": "^3.529.1",
+        "cheerio": "^1.0.0-rc.12",
         "duck-duck-scrape": "^2.2.5",
         "faiss-node": "^0.5.1",
         "lowdb": "^7.0.1",
         "ollama": "^0.4.6",
+        "request": "^2.88.2",
         "string-strip-html": "^13.4.6"
     },
     "devDependencies": {
