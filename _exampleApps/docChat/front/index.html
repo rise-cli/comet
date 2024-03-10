@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"
+        ></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <nav>
+                <h1>AWS-Lite DocChat</h1>
+            </nav>
+            <div class="chat-container">
+                <my-chat id="chat"></my-chat>
+            </div>
+        </div>
+    </body>
+    <script type="module">
+        import '/chat.js'
+
+        // API
+        const chat = document.getElementById('chat')
+
+        chat.addEventListener('submit', (e) => {
+            const v = e.detail.value
+
+            fetch('api/submit', {
+                method: 'POST',
+
+                body: JSON.stringify({
+                    question: v
+                })
+            })
+                .then((x) => x.json())
+                .then((x) => {
+                    chat.addMessage('actor-ai', x.answer, x.time)
+                })
+                .catch((e) => {
+                    chat.addMessage('actor-ai', e.message)
+                })
+        })
+    </script>
+</html>
